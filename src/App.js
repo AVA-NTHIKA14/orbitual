@@ -1,7 +1,17 @@
 
 
 import React, { useState } from 'react';
-import { Cloud, Droplets, Wind, Thermometer, AlertTriangle, Calendar, MapPin, Search, Satellite } from 'lucide-react';
+import {
+  Cloud,
+  Droplets,
+  Wind,
+  Thermometer,
+  AlertTriangle,
+  Calendar,
+  MapPin,
+  Search,
+  Satellite,
+} from 'lucide-react';
 import { getWeatherLikelihoodData } from './weatherService';
 
 const ORBITUAL = () => {
@@ -17,20 +27,19 @@ const ORBITUAL = () => {
     hiking: { label: 'Hiking', icon: '🥾', tempThreshold: 30, windThreshold: 30, color: '#F59E0B' },
     fishing: { label: 'Fishing', icon: '🎣', tempThreshold: 28, windThreshold: 20, color: '#3B82F6' },
     lake: { label: 'Lake Activities', icon: '🚣', tempThreshold: 35, windThreshold: 15, color: '#06B6D4' },
-    vacation: { label: 'Vacation Planning', icon: '✈️', tempThreshold: 33, windThreshold: 20, color: '#8B5CF6' }
+    vacation: { label: 'Vacation Planning', icon: '✈️', tempThreshold: 33, windThreshold: 20, color: '#8B5CF6' },
   };
 
   const userProfiles = {
     general: { label: 'General Adult', sensitivity: 1.0, icon: '👤' },
     elderly: { label: 'Elderly/Senior', sensitivity: 1.3, icon: '👴' },
     children: { label: 'With Children', sensitivity: 1.2, icon: '👶' },
-    athlete: { label: 'Athletic/High Activity', sensitivity: 0.8, icon: '🏃' }
+    athlete: { label: 'Athletic/High Activity', sensitivity: 0.8, icon: '🏃' },
   };
 
   const fetchWeatherData = async () => {
     setLoading(true);
     setError(null);
-
     try {
       const data = await getWeatherLikelihoodData(location || 'San Francisco');
       setWeatherData(data);
@@ -231,8 +240,8 @@ const ORBITUAL = () => {
 
         <div style={{ position: 'relative', width: '140px', height: '140px', margin: '0 auto 20px' }}>
           <svg width="140" height="140" style={{ transform: 'rotate(-90deg)' }}>
-            <rcle cx="70" cy="70" r="45" fill="none" stroke="#e5e7eb" strokeWidthth="10" />
-            ircle
+            <circle cx="70" cy="70" r="45" fill="none" stroke="#e5e7eb" strokeWidth="10" />
+            <circle
               cx="70"
               cy="70"
               r="45"
@@ -242,7 +251,7 @@ const ORBITUAL = () => {
               strokeDasharray={circumference}
               strokeDashoffset={strokeDashoffset}
               strokeLinecap="round"
-              style={{ transition: 'all 1s ease-out' }}}}
+              style={{ transition: 'all 1s ease-out' }}
             />
           </svg>
           <div style={{ position: 'absolute', inset: '0', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
@@ -442,7 +451,17 @@ const ORBITUAL = () => {
 
       <div style={styles.mainContent}>
         <div style={styles.searchCard}>
-          <h2 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '24px', color: '#1f2937', display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <h2
+            style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              marginBottom: '24px',
+              color: '#1f2937',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '12px',
+            }}
+          >
             <Search size={28} />
             Plan Your Adventure
           </h2>
@@ -528,3 +547,4 @@ const ORBITUAL = () => {
 };
 
 export default ORBITUAL;
+
