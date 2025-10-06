@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+# ORBITUAL
+#### NASA Space Apps Challenge 2025
+Personalized Outdoor Risk Intelligence
+ 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+## Overview
+ORBITUAL provides personalized, activity-specific outdoor risk scores by combining NASA Earth observation data with local weather forecasts and simple user profiles. The app helps people plan safer outdoor activities (camping, hiking, fishing, etc.) by showing heat, wind, rain, and comfort likelihoods plus actionable recommendations.
 
-### `npm start`
+## Features
+- Personalized risk scores (heat, wind, rain, comfort) for selected activity and user profile.  
+- Three-day forecast summary with visual meters and recommendations.  
+- NASA POWER historical context (7-day averages) alongside OpenWeatherMap forecasts.  
+- Clean web UI built with React for easy demonstration and submission.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
+- Frontend: React.js, lucide-react (icons)  
+- HTTP client: axios  
+- Data: OpenWeatherMap (forecast + geocoding), NASA POWER API (historical daily point)   
+- Repo & hosting: GitHub
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Setup & Run Locally
 
-### `npm test`
+1. Clone the repo:
+git clone https://github.com/AVA-NTHIKA14/orbitual.git
+cd orbitual
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+text
 
-### `npm run build`
+2. Install dependencies:
+npm install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+text
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Add your OpenWeatherMap API key securely:
+- Create a `.env.local` file in the project root (this file must NOT be committed).
+- Add the following line (replace with your key):
+  ```
+  REACT_APP_OPENWEATHER_API_KEY=your_openweather_api_key_here
+  ```
+- Restart the dev server if it is running.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4. Ensure `.env` files are ignored (your `.gitignore` should contain):
+.env
+.env.local
+.env.development
+.env.production
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Start the app:
+npm start
+Visit http://localhost:3000 to view ORBITUAL.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Security Note
+- Do not commit API keys. If a key was pushed to a public repo, regenerate the key in the OpenWeatherMap dashboard and remove it from the Git history if necessary. For full secrecy, proxy requests through a backend server that holds the key server-side.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Project Context
+This project was developed as a solution for the **NASA Space Apps Challenge 2025**, addressing the challenge of personalizing outdoor safety and environmental risk assessment using NASA satellite data combined with local weather forecasts.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## NASA & Other Data Sources
+- NASA POWER API (daily point): https://power.larc.nasa.gov/  
+- OpenWeatherMap APIs: https://openweathermap.org/api
 
-## Learn More
+## Use of AI
+N/A — (or document any AI tools used; e.g., “Used ChatGPT to draft README and example code snippets.”)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits & License
+- Built for NASA Space Apps Challenge 2025.  
+- Icons: lucide-react  
